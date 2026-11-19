@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventVerse | Manage & Book Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="logo">Event<span>Verse</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#events-section">Events</a></li>
+            <li><button class="btn-primary" id="open-modal-btn">+ Create Event</button></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero-container">
+    <div class="hero-content">
+        <h1>Plan, Discover, and Experience Extraordinary Events</h1>
+        <p>Your all-in-one destination to host gatherings or join vibrant community experiences seamlessly.</p>
+        <a href="#events-section" class="btn-secondary">Explore Events</a>
+    </div>
+</section>
+
+<!-- Main Content: Dashboard -->
+<main id="events-section" class="main-dashboard">
+    <div class="dashboard-header">
+        <h2>Upcoming Events</h2>
+        <!-- Filter Category controls -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Tech">Tech</button>
+            <button class="filter-btn" data-category="Music">Music</button>
+            <button class="filter-btn" data-category="Business">Business</button>
+        </div>
+    </div>
+
+    <!-- Dynamic Grid Layout for Cards -->
+    <div class="events-grid" id="events-container">
+        <!-- JavaScript will inject event cards here -->
+    </div>
+</main>
+
+<!-- Create Event Modal Form -->
+<div class="modal-overlay" id="event-modal">
+    <div class="modal-box">
+        <span class="close-btn" id="close-modal-btn">&times;</span>
+        <h3>Host a New Event</h3>
+        <form id="create-event-form">
+            <div class="form-group">
+                <label for="event-title">Event Title</label>
+                <input type="text" id="event-title" required placeholder="e.g., Summer Music Fest">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-category">Category</label>
+                    <select id="event-category" required>
+                        <option value="Tech">Tech</option>
+                        <option value="Music">Music</option>
+                        <option value="Business">Business</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="event-location">Location</label>
+                <input type="text" id="event-location" required placeholder="e.g., Convention Center / Zoom">
+            </div>
+            <div class="form-group">
+                <label for="event-desc">Description</label>
+                <textarea id="event-desc" rows="3" required placeholder="Describe what makes this event special..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Publish Event</button>
+        </form>
+    </div>
+</div>
+
+<!-- RSVP Confirmation Toast Message -->
+<div class="toast" id="toast-message">RSVP Confirmed Successfully! 🎉</div>
+
+<footer class="footer">
+    <p>&copy; 2026 EventVerse Management Platform. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
